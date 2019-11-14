@@ -45,6 +45,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptoSteganography.Extensi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptoSteganography.Extensions.Picture.Tests", "CryptoSteganography.Extensions.Picture.Tests\CryptoSteganography.Extensions.Picture.Tests.csproj", "{82AFBAA5-7C28-42A9-AA1E-F99E06BA20DB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptoSteganography.Extensions.Picture.Tests.Mock", "CryptoSteganography.Extensions.Picture.Tests.Mock\CryptoSteganography.Extensions.Picture.Tests.Mock.csproj", "{3E5DA44A-0509-4218-96A8-D68AC0AC819C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -123,6 +125,10 @@ Global
 		{82AFBAA5-7C28-42A9-AA1E-F99E06BA20DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{82AFBAA5-7C28-42A9-AA1E-F99E06BA20DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{82AFBAA5-7C28-42A9-AA1E-F99E06BA20DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E5DA44A-0509-4218-96A8-D68AC0AC819C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E5DA44A-0509-4218-96A8-D68AC0AC819C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E5DA44A-0509-4218-96A8-D68AC0AC819C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E5DA44A-0509-4218-96A8-D68AC0AC819C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -147,5 +153,6 @@ Global
 		{63028AD7-1736-4790-A645-22AF6A3BCC9F} = {7093B332-B591-4980-9487-EA7B47F4F60F}
 		{E9D5B399-6D84-4BB3-A8C4-32603FA72193} = {6A21AB04-FE0A-44DC-9038-E7C2E1A9ABEA}
 		{82AFBAA5-7C28-42A9-AA1E-F99E06BA20DB} = {FFE023E3-05AB-416A-890F-BEBCD618C18E}
+		{3E5DA44A-0509-4218-96A8-D68AC0AC819C} = {7093B332-B591-4980-9487-EA7B47F4F60F}
 	EndGlobalSection
 EndGlobal

@@ -9,7 +9,12 @@ namespace CryptoSteganography.Extensions.Picture.Tests
         [TestMethod()]
         public void ToByteArrayTest()
         {
-            Assert.Fail();
+            //// Test Module
+            //byte[] actual = StringMock.StringItem.ToByteArray();
+            //byte[] expected = StringMock.StringByteArray;
+
+            //// Test Condition
+            //CollectionAssert.AreEqual(expected, actual);
         }
     }
 }
