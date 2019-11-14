@@ -1,0 +1,10 @@
+# Code Owners
+
+# Review when someone opens a pull request.
+*       @azmisahin
+
+# When someone opens a pull request that only modifies JS files.
+*.cs	@azmisahin
+
+#  When someone opens a pull request that only modifies /docs folder.
+/docs	@azmisahin
