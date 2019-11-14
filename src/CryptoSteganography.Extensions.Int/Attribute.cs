@@ -29,17 +29,17 @@ namespace CryptoSteganography.Extensions.Int
         /// <summary>
         /// Converts an int array to a byte array type.
         /// </summary>
-        /// <param name="bitMatrix"></param>
+        /// <param name="intMatrix"></param>
         /// <returns></returns>
-        public static byte[] ToByteArray(this int[,] bitMatrix)
+        public static byte[] ToByteArray(this int[,] intMatrix)
         {
             byte[] result;
 
             // Matrix Row
-            int byteCount = bitMatrix.GetLength(0);
+            int byteCount = intMatrix.GetLength(0);
 
             // Matrix Col
-            int bitCount = bitMatrix.GetLength(1);
+            int bitCount = intMatrix.GetLength(1);
 
             // Byte Array Re Initalize
             result = new byte[byteCount];
@@ -51,7 +51,7 @@ namespace CryptoSteganography.Extensions.Int
 
                 for (int c = 0; c < bitCount; c++)
                 {
-                    int item = bitMatrix[r, c];
+                    int item = intMatrix[r, c];
                     bitArray[c] = item;
                 }
                 result[r] = bitArray.ToByte();

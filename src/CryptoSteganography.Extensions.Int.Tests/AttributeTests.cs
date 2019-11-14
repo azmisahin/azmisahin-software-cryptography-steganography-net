@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using CryptoSteganography.Extensions.Int;
+using CryptoSteganography.Extensions.Int.Tests.Mock;
 
 namespace CryptoSteganography.Extensions.Int.Tests
 {
@@ -9,13 +10,24 @@ namespace CryptoSteganography.Extensions.Int.Tests
         [TestMethod()]
         public void ToByteTest()
         {
-            Assert.Fail();
+            // Test Module
+            byte actual = IntMock.IntArray.ToByte();
+            byte expected = IntMock.ByteItem;
+
+            // Test Condition
+            Assert.AreEqual(expected, actual);
         }
 
         [TestMethod()]
         public void ToByteArrayTest()
         {
-            Assert.Fail();
+
+            // Test Module
+            byte[] actual = IntMock.IntMatrix.ToByteArray();
+            byte[] expected = IntMock.ByteArray;
+
+            // Test Condition
+            CollectionAssert.AreEqual(expected, actual);
         }
     }
 }

@@ -54,6 +54,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CryptoSteganography.Extensions.Int.Tests.Mock\CryptoSteganography.Extensions.Int.Tests.Mock.csproj">
+      <Project>{3DAAF033-FEE8-41C9-92FC-1290CF94390D}</Project>
+      <Name>CryptoSteganography.Extensions.Int.Tests.Mock</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CryptoSteganography.Extensions.Int\CryptoSteganography.Extensions.Int.csproj">
       <Project>{66E6C491-F8FB-4DFB-884B-9189DD4C7F96}</Project>
       <Name>CryptoSteganography.Extensions.Int</Name>
