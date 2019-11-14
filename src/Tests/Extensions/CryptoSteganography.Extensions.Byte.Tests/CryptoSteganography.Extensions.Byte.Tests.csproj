@@ -3,11 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{23D2DAFE-87A9-4E55-BD2F-93644708E928}</ProjectGuid>
+    <ProjectGuid>{62EFFE70-3B78-4FB3-94C4-C6520F4C7F41}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CryptoSteganography.Extensions.Bit.Tests</RootNamespace>
-    <AssemblyName>CryptoSteganography.Extensions.Bit.Tests</AssemblyName>
+    <RootNamespace>CryptoSteganography.Extensions.Byte.Tests</RootNamespace>
+    <AssemblyName>CryptoSteganography.Extensions.Byte.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -54,13 +54,25 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CryptoSteganography.Extensions.Bit.Tests.Mock\CryptoSteganography.Extensions.Bit.Tests.Mock.csproj">
-      <Project>{46FC629C-18A4-4E67-B809-40DB04AF500B}</Project>
+    <ProjectReference Include="..\..\..\Extensions\CryptoSteganography.Extensions.Bit\CryptoSteganography.Extensions.Bit.csproj">
+      <Project>{57feaeb2-800e-428b-9fa7-ccd7ae34eb00}</Project>
+      <Name>CryptoSteganography.Extensions.Bit</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Extensions\CryptoSteganography.Extensions.Byte\CryptoSteganography.Extensions.Byte.csproj">
+      <Project>{c6473fae-eed9-4aab-8ece-762c121757cd}</Project>
+      <Name>CryptoSteganography.Extensions.Byte</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Extensions\CryptoSteganography.Extensions\CryptoSteganography.Extensions.csproj">
+      <Project>{61a509cf-635f-4fcd-91f6-5dd45ad10b73}</Project>
+      <Name>CryptoSteganography.Extensions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mocks\CryptoSteganography.Extensions.Bit.Tests.Mock\CryptoSteganography.Extensions.Bit.Tests.Mock.csproj">
+      <Project>{46fc629c-18a4-4e67-b809-40db04af500b}</Project>
       <Name>CryptoSteganography.Extensions.Bit.Tests.Mock</Name>
     </ProjectReference>
-    <ProjectReference Include="..\CryptoSteganography.Extensions.Bit\CryptoSteganography.Extensions.Bit.csproj">
-      <Project>{57FEAEB2-800E-428B-9FA7-CCD7AE34EB00}</Project>
-      <Name>CryptoSteganography.Extensions.Bit</Name>
+    <ProjectReference Include="..\Mocks\CryptoSteganography.Extensions.Byte.Tests.Mock\CryptoSteganography.Extensions.Byte.Tests.Mock.csproj">
+      <Project>{0270ee1c-73bc-4a0b-9a84-fa162015cdf4}</Project>
+      <Name>CryptoSteganography.Extensions.Byte.Tests.Mock</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

@@ -3,11 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{84ACB0D8-09D7-4363-83CD-485AE96C4B62}</ProjectGuid>
+    <ProjectGuid>{1FD300DA-C472-4BB8-AC69-6FE13B122175}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CryptoSteganography.Extensions.String.Tests</RootNamespace>
-    <AssemblyName>CryptoSteganography.Extensions.String.Tests</AssemblyName>
+    <RootNamespace>CryptoSteganography.Extensions.Char.Tests</RootNamespace>
+    <AssemblyName>CryptoSteganography.Extensions.Char.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -54,13 +54,17 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CryptoSteganography.Extensions.String.Tests.Mock\CryptoSteganography.Extensions.String.Tests.Mock.csproj">
-      <Project>{63028AD7-1736-4790-A645-22AF6A3BCC9F}</Project>
-      <Name>CryptoSteganography.Extensions.String.Tests.Mock</Name>
+    <ProjectReference Include="..\..\..\Extensions\CryptoSteganography.Extensions\CryptoSteganography.Extensions.csproj">
+      <Project>{61a509cf-635f-4fcd-91f6-5dd45ad10b73}</Project>
+      <Name>CryptoSteganography.Extensions</Name>
     </ProjectReference>
-    <ProjectReference Include="..\CryptoSteganography.Extensions.String\CryptoSteganography.Extensions.String.csproj">
-      <Project>{0FF82983-8720-4CBC-A23A-BF47D1B9DCF3}</Project>
-      <Name>CryptoSteganography.Extensions.String</Name>
+    <ProjectReference Include="..\Mocks\CryptoSteganography.Extensions.Char.Tests.Mock\CryptoSteganography.Extensions.Char.Tests.Mock.csproj">
+      <Project>{eaaf9243-8c3b-457b-8dd3-42685148d62b}</Project>
+      <Name>CryptoSteganography.Extensions.Char.Tests.Mock</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Extensions\CryptoSteganography.Extensions.Char\CryptoSteganography.Extensions.Char.csproj">
+      <Project>{5D4889AE-2599-4737-92AA-CFE08D3C7838}</Project>
+      <Name>CryptoSteganography.Extensions.Char</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

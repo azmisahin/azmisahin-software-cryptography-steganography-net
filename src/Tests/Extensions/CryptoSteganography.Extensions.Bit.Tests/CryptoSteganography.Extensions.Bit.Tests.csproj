@@ -3,11 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{82AFBAA5-7C28-42A9-AA1E-F99E06BA20DB}</ProjectGuid>
+    <ProjectGuid>{23D2DAFE-87A9-4E55-BD2F-93644708E928}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CryptoSteganography.Extensions.Picture.Tests</RootNamespace>
-    <AssemblyName>CryptoSteganography.Extensions.Picture.Tests</AssemblyName>
+    <RootNamespace>CryptoSteganography.Extensions.Bit.Tests</RootNamespace>
+    <AssemblyName>CryptoSteganography.Extensions.Bit.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -36,7 +36,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.Drawing" />
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -55,13 +54,17 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CryptoSteganography.Extensions.Picture.Tests.Mock\CryptoSteganography.Extensions.Picture.Tests.Mock.csproj">
-      <Project>{3E5DA44A-0509-4218-96A8-D68AC0AC819C}</Project>
-      <Name>CryptoSteganography.Extensions.Picture.Tests.Mock</Name>
+    <ProjectReference Include="..\..\..\Extensions\CryptoSteganography.Extensions.Bit\CryptoSteganography.Extensions.Bit.csproj">
+      <Project>{57feaeb2-800e-428b-9fa7-ccd7ae34eb00}</Project>
+      <Name>CryptoSteganography.Extensions.Bit</Name>
     </ProjectReference>
-    <ProjectReference Include="..\CryptoSteganography.Extensions.Picture\CryptoSteganography.Extensions.Picture.csproj">
-      <Project>{E9D5B399-6D84-4BB3-A8C4-32603FA72193}</Project>
-      <Name>CryptoSteganography.Extensions.Picture</Name>
+    <ProjectReference Include="..\..\..\Extensions\CryptoSteganography.Extensions\CryptoSteganography.Extensions.csproj">
+      <Project>{61a509cf-635f-4fcd-91f6-5dd45ad10b73}</Project>
+      <Name>CryptoSteganography.Extensions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mocks\CryptoSteganography.Extensions.Bit.Tests.Mock\CryptoSteganography.Extensions.Bit.Tests.Mock.csproj">
+      <Project>{46fc629c-18a4-4e67-b809-40db04af500b}</Project>
+      <Name>CryptoSteganography.Extensions.Bit.Tests.Mock</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>
