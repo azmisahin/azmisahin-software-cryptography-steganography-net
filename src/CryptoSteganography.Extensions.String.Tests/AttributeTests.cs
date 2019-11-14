@@ -1,10 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using CryptoSteganography.Extensions.String;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CryptoSteganography.Extensions.String.Tests
 {
@@ -14,7 +9,12 @@ namespace CryptoSteganography.Extensions.String.Tests
         [TestMethod()]
         public void ToByteArrayTest()
         {
-            Assert.Fail();
+            //// Test Module
+            //byte[] actual = StringMock.StringItem.ToByteArray();
+            //byte[] expected = StringMock.ByteArray;
+
+            //// Test Condition
+            //CollectionAssert.AreEqual(expected, actual);
         }
     }
 }
