@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace CryptoSteganography.Extensions
+﻿namespace System.Runtime.CompilerServices
 {
     /// <summary>
     /// Global Extension Attribute
