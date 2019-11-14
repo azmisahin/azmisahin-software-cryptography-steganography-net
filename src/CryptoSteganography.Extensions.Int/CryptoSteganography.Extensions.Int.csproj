@@ -33,7 +33,14 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CryptoSteganography.Extensions\CryptoSteganography.Extensions.csproj">
+      <Project>{61a509cf-635f-4fcd-91f6-5dd45ad10b73}</Project>
+      <Name>CryptoSteganography.Extensions</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
