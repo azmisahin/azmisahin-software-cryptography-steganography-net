@@ -11,6 +11,14 @@
         private Proccesing proccesing { get; set; }
 
         /// <summary>
+        /// Separator
+        /// </summary>
+        public Separator()
+        {
+            proccesing = new Proccesing();
+        }
+
+        /// <summary>
         /// Separates the bit array from the bit matrix.
         /// </summary>
         /// <param name="bitMatrix">Merged Bit Matrix</param>
