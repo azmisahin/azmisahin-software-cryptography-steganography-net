@@ -19,43 +19,43 @@ namespace CryptoSteganography.Core.Tests
         [TestMethod()]
         public void FTest()
         {
-            int defaultRow = 8;
+            int defaultCol = 8;
 
             // Define
             var instance = new Proccesing();
 
             // Test Modul
-            int actual = instance.F(row: defaultRow, col: 2);
             int expected = 4;
+            int actual = instance.F(row: 2, col: defaultCol);
 
             // Test Condition
             Assert.AreEqual(expected, actual);
 
             // Test Modul
-            actual = instance.F(row: defaultRow, col: 4);
             expected = 6;
-
+            actual = instance.F(row: 4, col: defaultCol);
+            
             // Test Condition
             Assert.AreEqual(expected, actual);
 
             // Test Modul
-            actual = instance.F(row: defaultRow, col: 8);
             expected = 7;
-
+            actual = instance.F(row: 8, col: defaultCol);
+            
             // Test Condition
             Assert.AreEqual(expected, actual);
 
             // Test Modul
-            actual = instance.F(row: defaultRow, col: 16);
             expected = 7;
-
+            actual = instance.F(row: 16, col: defaultCol);
+            
             // Test Condition
             Assert.AreEqual(expected, actual);
 
             // Test Modul
-            actual = instance.F(row: defaultRow, col: 32);
             expected = 7;
-
+            actual = instance.F(row: 32, col: defaultCol);
+            
             // Test Condition
             Assert.AreEqual(expected, actual);
         }

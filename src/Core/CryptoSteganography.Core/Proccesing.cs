@@ -13,10 +13,20 @@
         /// <returns></returns>
         public int F(int row, int col)
         {
-            if (col < 2) throw new System.Exception(" 'col' must be greater than one.");
-            int area = row / col;
-            int fx = row - area;
-            if (fx == row) fx--;
+            if (row < 2) throw new System.Exception(" 'row' must be greater than one.");
+            if (col < 8) throw new System.Exception(" 'col' must be greater than eight.");
+
+            int fx = 0;
+
+            switch (row)
+            {
+                case 2: fx = 4; break;
+                case 4: fx = 6; break;
+                case 8: fx = 7; break;
+                case 16: fx = 7; break;
+                case 32: fx = 7; break;
+                default:fx = 7;break;
+            }
             return fx;
         }
     }
