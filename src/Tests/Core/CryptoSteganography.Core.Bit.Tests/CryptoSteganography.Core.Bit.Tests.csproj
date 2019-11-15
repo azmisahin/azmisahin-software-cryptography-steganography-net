@@ -58,6 +58,14 @@
       <Project>{E56687F6-262C-4739-8529-764E88B4D762}</Project>
       <Name>CryptoSteganography.Core.Bit</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\..\Core\CryptoSteganography.Core\CryptoSteganography.Core.csproj">
+      <Project>{a90cfd28-9029-46a1-96be-43a4826eda5e}</Project>
+      <Name>CryptoSteganography.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Extensions\Mocks\CryptoSteganography.Extensions.Bit.Tests.Mock\CryptoSteganography.Extensions.Bit.Tests.Mock.csproj">
+      <Project>{46fc629c-18a4-4e67-b809-40db04af500b}</Project>
+      <Name>CryptoSteganography.Extensions.Bit.Tests.Mock</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
