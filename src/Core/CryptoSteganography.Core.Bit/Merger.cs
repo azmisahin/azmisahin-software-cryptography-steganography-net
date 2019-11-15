@@ -23,7 +23,7 @@
         /// <summary>
         /// Bit Matrix Set Source.
         /// </summary>
-        /// <param name="bitMatrix"></param>
+        /// <param name="bitMatrix">Source Bit Matrix</param>
         public Merger(int[,] bitMatrix)
         {
             proccesing = new Proccesing();
@@ -34,7 +34,7 @@
         /// Combines the bit matrix with the bit sequence.
         /// </summary>
         /// <param name="bitArray"></param>
-        /// <returns></returns>
+        /// <returns>int[,] Merged Bit Matrix.</returns>
         public int[,] Merge(int[] bitArray)
         {
             // Matrix Row.
@@ -72,7 +72,7 @@
                 }
             }
 
-            // Merged Matrix.
+            // Merged Bit Matrix.
             return result;
         }
     }
