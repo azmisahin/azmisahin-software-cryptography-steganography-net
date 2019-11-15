@@ -6,6 +6,17 @@
     public class Proccesing : Core.Proccesing
     {
         /// <summary>
+        /// The default bit length for bit operations.
+        /// 8, 16, 24, 32, .., 32768
+        /// </summary>
+        private ushort defaultBitLength { get; set; }
+
+        /// <summary>
+        /// Bits in memory.
+        /// </summary>
+        private int[,] bits { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         public Proccesing()
@@ -23,20 +34,9 @@
         }
 
         /// <summary>
-        /// The default bit length for bit operations.
-        /// 8, 16, 24, 32, .., 32768
-        /// </summary>
-        private ushort defaultBitLength { get; set; }
-
-        /// <summary>
         /// Returns the bit length.
         /// </summary>
         public ushort BitLength { get { return defaultBitLength; } }
-
-        /// <summary>
-        /// Bits in memory.
-        /// </summary>
-        private int[,] bits { get; set; }
 
         /// <summary>
         /// Returns a matrix in memory.
