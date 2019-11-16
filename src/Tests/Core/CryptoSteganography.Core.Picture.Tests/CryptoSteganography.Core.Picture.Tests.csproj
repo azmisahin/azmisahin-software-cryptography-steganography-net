@@ -36,6 +36,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Drawing" />
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -57,6 +58,14 @@
     <ProjectReference Include="..\..\..\Core\CryptoSteganography.Core.Picture\CryptoSteganography.Core.Picture.csproj">
       <Project>{D4E972F3-3E24-43A1-AC89-A00D8DB766A7}</Project>
       <Name>CryptoSteganography.Core.Picture</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Extensions\Mocks\CryptoSteganography.Extensions.Byte.Tests.Mock\CryptoSteganography.Extensions.Byte.Tests.Mock.csproj">
+      <Project>{0270EE1C-73BC-4A0B-9A84-FA162015CDF4}</Project>
+      <Name>CryptoSteganography.Extensions.Byte.Tests.Mock</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Extensions\Mocks\CryptoSteganography.Extensions.Picture.Tests.Mock\CryptoSteganography.Extensions.Picture.Tests.Mock.csproj">
+      <Project>{3E5DA44A-0509-4218-96A8-D68AC0AC819C}</Project>
+      <Name>CryptoSteganography.Extensions.Picture.Tests.Mock</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

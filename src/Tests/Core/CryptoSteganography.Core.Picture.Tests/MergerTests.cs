@@ -1,10 +1,8 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using CryptoSteganography.Core.Picture;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using CryptoSteganography.Extensions.Picture.Tests.Mock;
+using CryptoSteganography.Extensions.Byte.Tests.Mock;
+using System.Drawing;
 
 namespace CryptoSteganography.Core.Picture.Tests
 {
@@ -14,19 +12,39 @@ namespace CryptoSteganography.Core.Picture.Tests
         [TestMethod()]
         public void MergerTest()
         {
-            Assert.Fail();
+            // Instance
+            var instance = new Merger(PictureMock.SampleColor);
+
+            // Test Condination
+            Assert.IsInstanceOfType(instance, typeof(Merger));
         }
 
         [TestMethod()]
         public void MergeTest()
         {
-            Assert.Fail();
+            // Instance
+            var instance = new Merger(PictureMock.SampleColor);
+
+            // Test Modul
+            Color expected = PictureMock.SampleMergedColor;
+            Color actual = instance.Merge(ByteMock.ByteItem);
+
+            // Test Condination
+            Assert.AreEqual(expected, actual);
         }
 
         [TestMethod()]
-        public void MergeTest1()
+        public void MergeTest_Char()
         {
-            Assert.Fail();
+            // Instance
+            var instance = new Merger(PictureMock.SampleColor);
+
+            // Test Modul
+            Color expected = PictureMock.SampleMergedColor;
+            Color actual = instance.Merge(ByteMock.CharItem);
+
+            // Test Condination
+            Assert.AreEqual(expected, actual);
         }
     }
 }
