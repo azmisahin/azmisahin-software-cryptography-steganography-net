@@ -11,15 +11,15 @@
         private int[,] _BitMatrix { get; set; }
 
         /// <summary>
-        /// Bit Proccesing.
-        /// </summary>
-        private Proccesing proccesing { get; set; }
-
-        /// <summary>
         /// Bit Matrix.
         /// </summary>
         public int[,] BitMatrix { get { return _BitMatrix; } }
 
+        /// <summary>
+        /// Bit Proccesing.
+        /// </summary>
+        private Proccesing proccesing { get; set; }
+        
         /// <summary>
         /// Bit Matrix Set Source.
         /// </summary>

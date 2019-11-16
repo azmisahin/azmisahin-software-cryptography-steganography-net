@@ -9,12 +9,22 @@
         /// The default bit length for bit operations.
         /// 8, 16, 24, 32, .., 32768
         /// </summary>
-        private ushort defaultBitLength { get; set; }
-
+        private ushort _BitLength { get; set; }
+        
+        /// <summary>
+        /// Returns the bit length.
+        /// </summary>
+        public ushort BitLength { get { return _BitLength; } }
+        
         /// <summary>
         /// Bits in memory.
         /// </summary>
-        private int[,] bits { get; set; }
+        private int[,] _BitMatrix { get; set; }
+
+        /// <summary>
+        /// Returns a matrix in memory.
+        /// </summary>
+        public int[,] BitMatrix { get { return _BitMatrix; } }
 
         /// <summary>
         /// 
@@ -32,17 +42,7 @@
         {
             defaultBitLength = bitLength;
         }
-
-        /// <summary>
-        /// Returns the bit length.
-        /// </summary>
-        public ushort BitLength { get { return defaultBitLength; } }
-
-        /// <summary>
-        /// Returns a matrix in memory.
-        /// </summary>
-        public int[,] BitMatrix { get { return bits; } }
-
+        
         /// <summary>
         ///  Set Bit Matrix With Bit Matrix
         /// </summary>
@@ -50,8 +50,9 @@
         /// <returns></returns>
         public int[,] SetSource(int[,] bitMatrix)
         {
-            this.bits = bitMatrix;
-            return bits;
+            this._BitMatrix = bitMatrix;
+
+            return BitMatrix;
         }
     }
 }
