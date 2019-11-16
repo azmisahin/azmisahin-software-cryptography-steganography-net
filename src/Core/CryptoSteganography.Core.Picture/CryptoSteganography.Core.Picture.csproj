@@ -31,9 +31,25 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Drawing" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Merger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Extensions\CryptoSteganography.Extensions.Char\CryptoSteganography.Extensions.Char.csproj">
+      <Project>{5D4889AE-2599-4737-92AA-CFE08D3C7838}</Project>
+      <Name>CryptoSteganography.Extensions.Char</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Extensions\CryptoSteganography.Extensions.Picture\CryptoSteganography.Extensions.Picture.csproj">
+      <Project>{E9D5B399-6D84-4BB3-A8C4-32603FA72193}</Project>
+      <Name>CryptoSteganography.Extensions.Picture</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CryptoSteganography.Core.Byte\CryptoSteganography.Core.Byte.csproj">
+      <Project>{a2676748-fb4b-4b0a-a33a-24f846252012}</Project>
+      <Name>CryptoSteganography.Core.Byte</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
