@@ -1,4 +1,6 @@
-﻿namespace CryptoSteganography.Core.Byte
+﻿using CryptoSteganography.Extensions.Byte;
+
+namespace CryptoSteganography.Core.Byte
 {
     /// <summary>
     /// Byte Proccesing
@@ -16,11 +18,16 @@
         public byte[] ByteArray { get { return _ByteArray; } }
 
         /// <summary>
+        /// Bit Proccesing
+        /// </summary>
+        public Bit.Proccesing BitProccesing { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         public Proccesing()
         {
-
+            BitProccesing = new Bit.Proccesing();
         }
 
         /// <summary>
@@ -31,6 +38,8 @@
         public byte[] SetSource(byte[] byteArray)
         {
             this._ByteArray = byteArray;
+
+            BitProccesing.SetSource(byteArray.ToBitMatrix(8));
 
             return ByteArray;
         }

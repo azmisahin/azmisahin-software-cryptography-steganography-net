@@ -1,4 +1,7 @@
-﻿namespace CryptoSteganography.Core.Byte
+﻿using CryptoSteganography.Extensions.Byte;
+using CryptoSteganography.Extensions.Int;
+
+namespace CryptoSteganography.Core.Byte
 {
     /// <summary>
     /// Byte Mergers
@@ -21,13 +24,19 @@
         public Proccesing proccesing { get; set; }
 
         /// <summary>
+        /// Bit Merger
+        /// </summary>
+        public Bit.Merger BitMerger { get; set; }
+
+        /// <summary>
         /// Byte Array Set Source.
         /// </summary>
         /// <param name="byteArray">Source Byte Array</param>
         public Merger(byte[] byteArray)
         {
             proccesing = new Proccesing();
-            _ByteArray = proccesing.SetSource(ByteArray);
+            BitMerger = new Bit.Merger(byteArray.ToBitMatrix(8));
+            _ByteArray = proccesing.SetSource(byteArray);
         }
 
         /// <summary>
@@ -38,6 +47,10 @@
         public byte[] Merge(byte byteItem)
         {
             byte[] result = ByteArray;
+
+            var bitMatrix = BitMerger.Merge(byteItem.ToBitArray(8));
+
+            result = bitMatrix.ToByteArray();
 
             return result;
         }

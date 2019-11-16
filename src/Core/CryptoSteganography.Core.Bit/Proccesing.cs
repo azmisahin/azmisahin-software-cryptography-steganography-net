@@ -31,7 +31,7 @@
         /// </summary>
         public Proccesing()
         {
-            defaultBitLength = 8;
+            _BitLength = 8;
         }
 
         /// <summary>
@@ -40,7 +40,7 @@
         /// <param name="bitLength"></param>
         public Proccesing(ushort bitLength)
         {
-            defaultBitLength = bitLength;
+            _BitLength = bitLength;
         }
         
         /// <summary>

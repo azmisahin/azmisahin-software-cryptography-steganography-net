@@ -37,6 +37,32 @@
     <Compile Include="Proccesing.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Core\CryptoSteganography.Core.Bit\CryptoSteganography.Core.Bit.csproj">
+      <Project>{e56687f6-262c-4739-8529-764e88b4d762}</Project>
+      <Name>CryptoSteganography.Core.Bit</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Core\CryptoSteganography.Core\CryptoSteganography.Core.csproj">
+      <Project>{a90cfd28-9029-46a1-96be-43a4826eda5e}</Project>
+      <Name>CryptoSteganography.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Extensions\CryptoSteganography.Extensions.Bit\CryptoSteganography.Extensions.Bit.csproj">
+      <Project>{57feaeb2-800e-428b-9fa7-ccd7ae34eb00}</Project>
+      <Name>CryptoSteganography.Extensions.Bit</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Extensions\CryptoSteganography.Extensions.Byte\CryptoSteganography.Extensions.Byte.csproj">
+      <Project>{C6473FAE-EED9-4AAB-8ECE-762C121757CD}</Project>
+      <Name>CryptoSteganography.Extensions.Byte</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Extensions\CryptoSteganography.Extensions.Int\CryptoSteganography.Extensions.Int.csproj">
+      <Project>{66E6C491-F8FB-4DFB-884B-9189DD4C7F96}</Project>
+      <Name>CryptoSteganography.Extensions.Int</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Extensions\CryptoSteganography.Extensions\CryptoSteganography.Extensions.csproj">
+      <Project>{61a509cf-635f-4fcd-91f6-5dd45ad10b73}</Project>
+      <Name>CryptoSteganography.Extensions</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
