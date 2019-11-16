@@ -36,6 +36,7 @@
     <Compile Include="Merger.cs" />
     <Compile Include="Proccesing.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Separator.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CryptoSteganography.Core.Bit\CryptoSteganography.Core.Bit.csproj">
