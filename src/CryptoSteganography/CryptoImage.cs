@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 
 namespace CryptoSteganography
@@ -54,6 +55,38 @@ namespace CryptoSteganography
         {
             _FileName = fileInfo.FullName;
             _BitmapImage = new Bitmap(_FileName);
+        }
+
+        /// <summary>
+        /// Internal Pixels
+        /// </summary>
+        private List<Pixel> _Pixels { get; set; }
+
+        /// <summary>
+        /// Image Pixels
+        /// </summary>
+        public List<Pixel> Pixels { get { return getPixels(); } }
+
+        /// <summary>
+        /// Get Pixels
+        /// </summary>
+        /// <returns></returns>
+        private List<Pixel> getPixels()
+        {
+            _Pixels = new List<Pixel>();
+            int id = 0;
+            for (int x = 0; x < _BitmapImage.Width; x++)
+            {
+                for (int y = 0; y < _BitmapImage.Height; y++)
+                {
+                    id++;
+                    Color color = _BitmapImage.GetPixel(x, y);
+                    Pixel pixel = new Pixel(x, y, color);
+                    pixel.ID = id;
+                    _Pixels.Add(pixel);
+                }
+            }
+            return _Pixels;
         }
     }
 }
