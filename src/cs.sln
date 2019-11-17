@@ -71,6 +71,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptoSteganography.Core.Pi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptoSteganography", "CryptoSteganography\CryptoSteganography.csproj", "{DE0FF911-2C52-48F6-B2B3-4B75BD12F8CD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptoSteganography.Tests", "Tests\CryptoSteganography.Tests\CryptoSteganography.Tests.csproj", "{5D123867-E2E7-467F-974D-9372DD94D2B4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -189,6 +191,10 @@ Global
 		{DE0FF911-2C52-48F6-B2B3-4B75BD12F8CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DE0FF911-2C52-48F6-B2B3-4B75BD12F8CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DE0FF911-2C52-48F6-B2B3-4B75BD12F8CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D123867-E2E7-467F-974D-9372DD94D2B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D123867-E2E7-467F-974D-9372DD94D2B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D123867-E2E7-467F-974D-9372DD94D2B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D123867-E2E7-467F-974D-9372DD94D2B4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -224,5 +230,6 @@ Global
 		{74802D22-3190-4997-8DB5-A89F038B2BD8} = {2E1356FD-962F-40D5-B90B-D1830651EAB8}
 		{D4E972F3-3E24-43A1-AC89-A00D8DB766A7} = {0CCBBCEA-FB61-4ED8-A20C-AD6C5C635D9E}
 		{A70CDE23-914D-4759-AC26-6F1D1594C614} = {2E1356FD-962F-40D5-B90B-D1830651EAB8}
+		{5D123867-E2E7-467F-974D-9372DD94D2B4} = {FFE023E3-05AB-416A-890F-BEBCD618C18E}
 	EndGlobalSection
 EndGlobal
