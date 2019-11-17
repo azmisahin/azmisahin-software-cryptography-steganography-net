@@ -1,5 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using CryptoSteganography;
+using System.IO;
+using System.Drawing;
 
 namespace CryptoSteganography.Tests
 {
@@ -9,13 +11,41 @@ namespace CryptoSteganography.Tests
         [TestMethod()]
         public void CryptoImageTest()
         {
-            Assert.Fail();
+            // Instance
+            var instance = new CryptoImage(new FileInfo("sample/square.bmp"));
+
+            // Test Condination
+            Assert.IsInstanceOfType(instance, typeof(CryptoImage));
         }
 
         [TestMethod()]
-        public void CryptoImageTest_FromFile()
+        public void CryptoImageTest_Bitmap()
         {
-            Assert.Fail();
+            // Instance
+            var instance = new CryptoImage(new Bitmap("sample/square.bmp"));
+
+            // Test Condination
+            Assert.IsInstanceOfType(instance, typeof(CryptoImage));
+        }
+
+        [TestMethod()]
+        public void CryptoImageTest_FileName()
+        {
+            // Instance
+            var instance = new CryptoImage("sample/square.bmp");
+
+            // Test Condination
+            Assert.IsInstanceOfType(instance, typeof(CryptoImage));
+        }
+
+        [TestMethod()]
+        public void CryptoImageTest_FileInfo()
+        {
+            // Instance
+            var instance = new CryptoImage(new FileInfo("sample/square.bmp"));
+
+            // Test Condination
+            Assert.IsInstanceOfType(instance, typeof(CryptoImage));
         }
     }
 }

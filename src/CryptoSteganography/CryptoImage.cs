@@ -1,4 +1,5 @@
 ﻿using System.Drawing;
+using System.IO;
 
 namespace CryptoSteganography
 {
@@ -43,6 +44,16 @@ namespace CryptoSteganography
         {
             _FileName = fileName;
             _BitmapImage = new Bitmap(fileName);
+        }
+
+        /// <summary>
+        /// Crypto Image from File Info
+        /// </summary>
+        /// <param name="fileInfo"></param>
+        public CryptoImage(FileInfo fileInfo)
+        {
+            _FileName = fileInfo.FullName;
+            _BitmapImage = new Bitmap(_FileName);
         }
     }
 }
