@@ -11,5 +11,11 @@ namespace CryptoSteganography.Tests
         {
             Assert.Fail();
         }
+
+        [TestMethod()]
+        public void CryptoImageTest_FromFile()
+        {
+            Assert.Fail();
+        }
     }
 }
