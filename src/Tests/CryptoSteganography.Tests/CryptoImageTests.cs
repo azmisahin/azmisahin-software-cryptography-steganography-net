@@ -3,6 +3,7 @@ using CryptoSteganography;
 using System.IO;
 using System.Drawing;
 using System.Collections.Generic;
+using CryptoSteganography.Extensions.String.Tests.Mock;
 
 namespace CryptoSteganography.Tests
 {
@@ -63,6 +64,16 @@ namespace CryptoSteganography.Tests
 
             // Test Condination
             Assert.IsTrue(actual.Count > 0);
+        }
+
+        [TestMethod()]
+        public void MergeTest()
+        {
+            // Instance
+            var instance = new CryptoImage(new FileInfo("sample/square.bmp"));
+
+            // Test Modul
+            instance.Merge(StringMock.StringItem);
         }
     }
 }

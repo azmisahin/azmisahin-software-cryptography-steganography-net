@@ -60,9 +60,17 @@
       <Project>{DE0FF911-2C52-48F6-B2B3-4B75BD12F8CD}</Project>
       <Name>CryptoSteganography</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Extensions\Mocks\CryptoSteganography.Extensions.Char.Tests.Mock\CryptoSteganography.Extensions.Char.Tests.Mock.csproj">
+      <Project>{EAAF9243-8C3B-457B-8DD3-42685148D62B}</Project>
+      <Name>CryptoSteganography.Extensions.Char.Tests.Mock</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Extensions\Mocks\CryptoSteganography.Extensions.Picture.Tests.Mock\CryptoSteganography.Extensions.Picture.Tests.Mock.csproj">
       <Project>{3E5DA44A-0509-4218-96A8-D68AC0AC819C}</Project>
       <Name>CryptoSteganography.Extensions.Picture.Tests.Mock</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Extensions\Mocks\CryptoSteganography.Extensions.String.Tests.Mock\CryptoSteganography.Extensions.String.Tests.Mock.csproj">
+      <Project>{63028AD7-1736-4790-A645-22AF6A3BCC9F}</Project>
+      <Name>CryptoSteganography.Extensions.String.Tests.Mock</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

@@ -65,7 +65,16 @@ namespace CryptoSteganography
         /// <summary>
         /// Image Pixels
         /// </summary>
-        public List<Pixel> Pixels { get { return getPixels(); } }
+        public List<Pixel> Pixels
+        {
+            get
+            {
+                if (_Pixels == null)
+                    return getPixels();
+                else
+                    return _Pixels;
+            }
+        }
 
         /// <summary>
         /// Get Pixels
@@ -87,6 +96,23 @@ namespace CryptoSteganography
                 }
             }
             return _Pixels;
+        }
+
+        /// <summary>
+        /// Merge String
+        /// </summary>
+        /// <param name="value"></param>
+        public void Merge(string value)
+        {
+            getPixels();
+
+            int length = value.Length;
+
+            for (int i = 0; i < length; i++)
+            {
+                var item = value[i];
+                _Pixels[i].Merge(item);
+            }
         }
     }
 }

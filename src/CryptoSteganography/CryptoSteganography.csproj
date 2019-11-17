@@ -38,6 +38,20 @@
     <Compile Include="Pixel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Core\CryptoSteganography.Core.Picture\CryptoSteganography.Core.Picture.csproj">
+      <Project>{d4e972f3-3e24-43a1-ac89-a00d8db766a7}</Project>
+      <Name>CryptoSteganography.Core.Picture</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Extensions\CryptoSteganography.Extensions.Byte\CryptoSteganography.Extensions.Byte.csproj">
+      <Project>{C6473FAE-EED9-4AAB-8ECE-762C121757CD}</Project>
+      <Name>CryptoSteganography.Extensions.Byte</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Extensions\CryptoSteganography.Extensions.Picture\CryptoSteganography.Extensions.Picture.csproj">
+      <Project>{e9d5b399-6d84-4bb3-a8c4-32603fa72193}</Project>
+      <Name>CryptoSteganography.Extensions.Picture</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
