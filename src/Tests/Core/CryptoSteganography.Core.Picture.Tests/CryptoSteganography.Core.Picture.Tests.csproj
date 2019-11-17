@@ -52,7 +52,6 @@
   </Choose>
   <ItemGroup>
     <Compile Include="MergerTests.cs" />
-    <Compile Include="PixelTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SeparatorTests.cs" />
   </ItemGroup>

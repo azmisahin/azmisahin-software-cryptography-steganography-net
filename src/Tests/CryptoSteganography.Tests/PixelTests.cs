@@ -1,8 +1,8 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using CryptoSteganography.Core.Picture;
+using CryptoSteganography;
 using CryptoSteganography.Extensions.Picture.Tests.Mock;
 
-namespace CryptoSteganography.Core.Picture.Tests
+namespace CryptoSteganography.Tests
 {
     [TestClass()]
     public class PixelTests

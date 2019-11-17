@@ -1,6 +1,6 @@
 ﻿using System.Drawing;
 
-namespace CryptoSteganography.Core.Picture
+namespace CryptoSteganography
 {
     /// <summary>
     /// Image Pixel

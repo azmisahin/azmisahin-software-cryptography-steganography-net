@@ -52,12 +52,17 @@
   </Choose>
   <ItemGroup>
     <Compile Include="CryptoImageTests.cs" />
+    <Compile Include="PixelTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\CryptoSteganography\CryptoSteganography.csproj">
       <Project>{DE0FF911-2C52-48F6-B2B3-4B75BD12F8CD}</Project>
       <Name>CryptoSteganography</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Extensions\Mocks\CryptoSteganography.Extensions.Picture.Tests.Mock\CryptoSteganography.Extensions.Picture.Tests.Mock.csproj">
+      <Project>{3E5DA44A-0509-4218-96A8-D68AC0AC819C}</Project>
+      <Name>CryptoSteganography.Extensions.Picture.Tests.Mock</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />
