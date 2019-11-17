@@ -1,5 +1,6 @@
 ﻿using CryptoSteganography.Extensions.Char;
 using CryptoSteganography.Extensions.Picture;
+using System;
 using System.Drawing;
 
 namespace CryptoSteganography.Core.Picture
@@ -66,6 +67,20 @@ namespace CryptoSteganography.Core.Picture
         public Color Merge(char charItem)
         {
             byte byteItem = charItem.ToByte();
+
+            Color result = Merge(byteItem);
+
+            return result;
+        }
+
+        /// <summary>
+        /// Merge From Int
+        /// </summary>
+        /// <param name="intItem"></param>
+        /// <returns></returns>
+        public Color Merge(int intItem)
+        {
+            byte byteItem = Convert.ToByte(intItem);
 
             Color result = Merge(byteItem);
 

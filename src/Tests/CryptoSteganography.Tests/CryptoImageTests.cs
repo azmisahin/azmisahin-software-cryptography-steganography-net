@@ -74,6 +74,7 @@ namespace CryptoSteganography.Tests
 
             // Test Modul
             instance.Merge(StringMock.StringItem);
+            //instance.BitmapImage.Save("sample/square.merged.bmp");
         }
     }
 }

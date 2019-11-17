@@ -118,5 +118,17 @@ namespace CryptoSteganography
 
             return MERGED_COLOR;
         }
+
+        /// <summary>
+        /// Merge Pixel Int Item
+        /// </summary>
+        /// <param name="item"></param>
+        /// <returns></returns>
+        public Color Merge(int item)
+        {
+            var merger = new Core.Picture.Merger(COLOR);
+            _MERGED_COLOR = merger.Merge(item);
+            return MERGED_COLOR;
+        }
     }
 }
