@@ -33,6 +33,7 @@ namespace CryptoSteganography.Core.Picture.Tests
             Assert.AreEqual(expected, actual);
         }
 
+
         [TestMethod()]
         public void MergeTest_Char()
         {
@@ -40,8 +41,8 @@ namespace CryptoSteganography.Core.Picture.Tests
             var instance = new Merger(PictureMock.SampleColor);
 
             // Test Modul
-            Color expected = Color.FromArgb(255, 255, 0, 0);
-            Color actual = instance.Merge(19);
+            Color expected = PictureMock.SampleIntMerger;
+            Color actual = instance.Merge(PictureMock.SampleInt);
 
             // Test Condination
             Assert.AreEqual(expected, actual);
