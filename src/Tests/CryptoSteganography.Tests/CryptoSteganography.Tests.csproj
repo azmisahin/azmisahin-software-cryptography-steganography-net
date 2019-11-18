@@ -82,7 +82,14 @@
       <Name>CryptoSteganography.Extensions.String.Tests.Mock</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="sample\dictionary.en.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="sample\dictionary.tr.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
   <ItemGroup>
     <Content Include="sample\merged\square.text.bmp">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
