@@ -198,12 +198,12 @@ namespace CryptoSteganography
         }
         
         /// <summary>
-        /// Save Merged Image
+        /// Merged Bitmap Save
         /// </summary>
-        /// <param name="fileName"></param>
-        public void Save(string fileName)
+        /// <param name="file"></param>
+        public void Save(FileInfo file)
         {
-            BitmapImage.Save(fileName);
+            BitmapImage.Save(file.FullName);
         }
     }
 }

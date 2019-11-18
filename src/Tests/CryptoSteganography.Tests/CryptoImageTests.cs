@@ -105,5 +105,24 @@ namespace CryptoSteganography.Tests
             // Test Condination
             Assert.AreEqual(StringMock.StringItem, instance.String);
         }
+        
+        [TestMethod()]
+        public void SaveTest()
+        {
+            // Instance
+            var instance = new CryptoImage(new FileInfo("sample/square.bmp"));
+
+            // Test Modul
+            instance.Merge(StringMock.StringItem);
+            string expected = StringMock.StringItem;
+            string actual = instance.String;
+
+            // Test Condination
+            Assert.AreEqual(expected, actual);
+            
+            // Thread SAFE
+            System.Threading.Thread.Sleep(10);
+            instance.Save(new FileInfo("sample/merged/square.text.bmp"));
+        }
     }
 }
