@@ -25,5 +25,16 @@ namespace CryptoSteganography
                 return new Merger();
             }
         }
+
+        /// <summary>
+        /// Separator
+        /// </summary>
+        public static ISeparator Separator
+        {
+            get
+            {
+                return new Separator();
+            }
+        }
     }
 }

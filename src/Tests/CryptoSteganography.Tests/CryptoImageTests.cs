@@ -121,7 +121,7 @@ namespace CryptoSteganography.Tests
             Assert.AreEqual(expected, actual);
             
             // Thread SAFE
-            System.Threading.Thread.Sleep(10);
+            System.Threading.Thread.Sleep(20);
             instance.Save(new FileInfo("sample/merged/square.text.bmp"));
         }
     }

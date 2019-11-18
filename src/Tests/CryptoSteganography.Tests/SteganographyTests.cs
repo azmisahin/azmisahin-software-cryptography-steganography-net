@@ -31,5 +31,26 @@ namespace CryptoSteganography.Tests
             // Test Condination
             Assert.IsInstanceOfType(instance, typeof(CryptoImage));
         }
+
+
+        [TestMethod()]
+        public void SteganographySeparatorTest()
+        {
+            var instance = Steganography
+                .Separator
+                .SourceType(SteganographyType.Image)
+                .Source(new FileInfo("sample/merged/square.txt.bmp"))
+                .SeparateType(SteganographyType.Text)
+                .Separate();
+
+            // Test Condination
+            Assert.IsInstanceOfType(instance, typeof(CryptoImage));
+
+            // Test Modul
+            CryptoImage actual = (CryptoImage)instance;
+
+            // Test Condination
+            Assert.IsInstanceOfType(actual.String, typeof(string));
+        }
     }
 }

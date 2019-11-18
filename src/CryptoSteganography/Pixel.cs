@@ -53,7 +53,7 @@ namespace CryptoSteganography
         {
             get
             {
-                var instance = new Separator(COLOR);
+                var instance = new Core.Picture.Separator(COLOR);
 
                 byte actual = instance.SeparateByte();
 
