@@ -94,6 +94,9 @@
     <Content Include="sample\merged\square.text.bmp">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="sample\merged\square.UTF8.text.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="sample\square.bmp">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

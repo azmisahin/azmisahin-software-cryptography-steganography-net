@@ -105,5 +105,26 @@ namespace CryptoSteganography.Tests
             // Test Condination
             Assert.IsInstanceOfType(actual, typeof(CryptoImage));
         }
+
+        [TestMethod()]
+        public void MergeUTF8Test()
+        {
+            // Instance
+            var instance = new Merger();
+
+            // Test Condination
+            Assert.IsInstanceOfType(instance, typeof(IMerger));
+
+            // Test Modul
+            var actual = instance
+                .SourceType(SteganographyType.Image)
+                .Source(new System.IO.FileInfo("sample/square.bmp"))
+                .MergeType(SteganographyType.Text)
+                .Content(StringMock.StringUTF8Item)
+                .Merge(new System.IO.FileInfo("sample/merged/square.UTF8.text.bmp"));
+
+            // Test Condination
+            Assert.IsInstanceOfType(actual, typeof(CryptoImage));
+        }
     }
 }

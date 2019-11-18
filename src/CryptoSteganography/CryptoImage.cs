@@ -156,20 +156,21 @@ namespace CryptoSteganography
         /// Content Length
         /// </summary>
         public int Length { get { return _Length; } }
-        
+
         /// <summary>
         /// Merge String
         /// </summary>
         /// <param name="value"></param>
         public void Merge(string value)
         {
-            int stringLength = value.Length;
+            byte[] utf8Value = System.Text.Encoding.UTF8.GetBytes(value);
+            int stringLength = utf8Value.Length;
             int endPosition = _StartPosition + stringLength;
             
             for (int i = _StartPosition; i < endPosition; i++)
             {
                 int charPosition = i - _StartPosition;
-                var item = value[charPosition];
+                var item = utf8Value[charPosition];
                 _Pixels[i].Merge(item);
                 _BitmapImage.SetPixel(_Pixels[i].X, _Pixels[i].Y, _Pixels[i].COLOR);
             }
@@ -187,11 +188,14 @@ namespace CryptoSteganography
             {
                 string result = "";
                 int endPosition = _StartPosition + Length;
+                byte[] buffer = new byte[Length];
                 for (int i = _StartPosition; i < endPosition; i++)
                 {
                     char item = _Pixels[i].Char;
+                    buffer[i - _StartPosition] = _Pixels[i].Byte;
                     result += item;
                 }
+                result = System.Text.Encoding.UTF8.GetString(buffer, 0, buffer.Length);
 
                 return result;
             }

@@ -69,5 +69,24 @@ namespace CryptoSteganography.Tests
             // Test Condination
             Assert.IsInstanceOfType(actual.String, typeof(string));
         }
+
+        [TestMethod()]
+        public void SeparateUTF8Test()
+        {
+            var instance = new Separator()
+                .SourceType(SteganographyType.Image)
+                .Source(new FileInfo("sample/merged/square.UTF8.text.bmp"))
+                .SeparateType(SteganographyType.Text)
+                .Separate();
+
+            // Test Condination
+            Assert.IsInstanceOfType(instance, typeof(CryptoImage));
+
+            // Test Modul
+            CryptoImage actual = (CryptoImage)instance;
+
+            // Test Condination
+            Assert.IsInstanceOfType(actual.String, typeof(string));
+        }
     }
 }
