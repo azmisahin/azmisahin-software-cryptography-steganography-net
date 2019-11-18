@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 
@@ -35,11 +36,23 @@ namespace CryptoSteganography
         public string FileName { get { return _FileName; } }
 
         /// <summary>
+        /// 32 Bit ARGB
+        /// </summary>
+        /// <param name="bitmap"></param>
+        /// <returns></returns>
+        private Bitmap ReInitalize(Bitmap bitmap)
+        {
+            Bitmap sourceBitmap = bitmap;
+            Bitmap targetBitmap = new Bitmap(bitmap);
+            return targetBitmap;
+        }
+
+        /// <summary>
         /// Crypto Image From Bitmap Image
         /// </summary>
         public CryptoImage(Bitmap bitmapImage)
         {
-            _BitmapImage = bitmapImage;
+            _BitmapImage = ReInitalize(bitmapImage);
         }
 
         /// <summary>
@@ -49,7 +62,7 @@ namespace CryptoSteganography
         public CryptoImage(string fileName)
         {
             _FileName = fileName;
-            _BitmapImage = new Bitmap(fileName);
+            _BitmapImage = ReInitalize(new Bitmap(fileName));
         }
 
         /// <summary>
@@ -59,7 +72,7 @@ namespace CryptoSteganography
         public CryptoImage(FileInfo fileInfo)
         {
             _FileName = fileInfo.FullName;
-            _BitmapImage = new Bitmap(_FileName);
+            _BitmapImage = ReInitalize(new Bitmap(_FileName));
         }
 
         /// <summary>
@@ -111,7 +124,7 @@ namespace CryptoSteganography
                 }
             }
 
-            _Length = _Pixels[0].MergedByteItem;
+            _Length = _Pixels[0].SeparateByteItem;
             return _Pixels;
         }
 
@@ -137,6 +150,34 @@ namespace CryptoSteganography
         }
 
         /// <summary>
+        /// Get Merged String
+        /// </summary>
+        /// <returns></returns>
+        public string GetMergedString()
+        {
+            string result = "";
+            for (int i = _StartPosition; i < Length + _StartPosition; i++)
+            {
+                result += Pixels[i].MergedCharItem;
+            }
+            return result;
+        }
+
+        /// <summary>
+        /// Get Separate String
+        /// </summary>
+        /// <returns></returns>
+        public string GetSeparateString()
+        {
+            string result = "";
+            for (int i = _StartPosition; i < Length + _StartPosition; i++)
+            {
+                result += Pixels[i].SeparateByteItem;
+            }
+            return result;
+        }
+
+        /// <summary>
         /// Set Lenth Header
         /// </summary>
         /// <param name="length"></param>
@@ -145,6 +186,15 @@ namespace CryptoSteganography
             _Length = length;
             _Pixels[0].Merge(length);
             _BitmapImage.SetPixel(_Pixels[0].X, _Pixels[0].Y, _Pixels[0].MERGED_COLOR);
+        }
+
+        /// <summary>
+        /// Save Merged Image
+        /// </summary>
+        /// <param name="fileName"></param>
+        public void Save(string fileName)
+        {
+            BitmapImage.Save(fileName);
         }
     }
 }

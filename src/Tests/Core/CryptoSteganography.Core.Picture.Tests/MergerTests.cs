@@ -40,8 +40,8 @@ namespace CryptoSteganography.Core.Picture.Tests
             var instance = new Merger(PictureMock.SampleColor);
 
             // Test Modul
-            Color expected = PictureMock.SampleMergedColor;
-            Color actual = instance.Merge(ByteMock.CharItem);
+            Color expected = Color.FromArgb(255, 255, 0, 0);
+            Color actual = instance.Merge(19);
 
             // Test Condination
             Assert.AreEqual(expected, actual);

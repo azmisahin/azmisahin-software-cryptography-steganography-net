@@ -74,7 +74,28 @@ namespace CryptoSteganography.Tests
 
             // Test Modul
             instance.Merge(StringMock.StringItem);
-            //instance.BitmapImage.Save("sample/square.merged.bmp");
+            string expected = StringMock.StringItem;
+            string actual = instance.GetMergedString();
+
+            // Test Condination
+            Assert.AreEqual(expected, actual);            
+
+            // Test Modul
+            instance.Save("sample/merged/square.text.bmp");
+        }
+
+        [TestMethod()]
+        public void SeparateTest()
+        {
+            // Instance
+            var instance = new CryptoImage(new FileInfo("sample/merged/square.text.bmp"));
+
+            // Test Modul
+            string expected = StringMock.StringItem;
+            string actual = instance.GetSeparateString();
+
+            // Test Condination
+            Assert.AreEqual(expected, actual);
         }
     }
 }
