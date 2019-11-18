@@ -1,4 +1,5 @@
 ## How do I start
+![steganography](media/steganography.jpg)
 
 ### Merger
 ```c#

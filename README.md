@@ -9,6 +9,7 @@ cryptography , steganography , bit , byte , int , char , string , color , pixel 
 
 # Documents.
 
+![steganography](docs/media/steganography.jpg)
 See how it works for a [quick start](docs/how-do-i-start.md).
 
 # Contribute
