@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Drawing;
-using CryptoSteganography.Extensions.Picture;
 using CryptoSteganography.Core.Picture;
 using CryptoSteganography.Extensions.Byte;
 using CryptoSteganography.Extensions.Char;
@@ -48,6 +47,7 @@ namespace CryptoSteganography
 
         /// <summary>
         /// Byte Item
+        /// Separate From Color
         /// </summary>
         public byte Byte
         {
@@ -63,6 +63,7 @@ namespace CryptoSteganography
 
         /// <summary>
         /// Char Item
+        /// Separate From Color
         /// </summary>
         public char Char
         {
@@ -74,6 +75,7 @@ namespace CryptoSteganography
 
         /// <summary>
         /// Int Item
+        /// Separate From Color
         /// </summary>
         public int Int
         {

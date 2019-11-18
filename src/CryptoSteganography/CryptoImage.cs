@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 
@@ -36,73 +35,9 @@ namespace CryptoSteganography
         public string FileName { get { return _FileName; } }
 
         /// <summary>
-        /// 32 Bit ARGB
-        /// </summary>
-        /// <param name="bitmap"></param>
-        /// <returns></returns>
-        private Bitmap ReInitalize(Bitmap bitmap)
-        {
-            Bitmap sourceBitmap = bitmap;
-            Bitmap targetBitmap = new Bitmap(bitmap);
-            return targetBitmap;
-        }
-
-        /// <summary>
-        /// Crypto Image From Bitmap Image
-        /// </summary>
-        public CryptoImage(Bitmap bitmapImage)
-        {
-            _BitmapImage = ReInitalize(bitmapImage);
-        }
-
-        /// <summary>
-        /// Crypto Image From File
-        /// </summary>
-        /// <param name="fileName"></param>
-        public CryptoImage(string fileName)
-        {
-            _FileName = fileName;
-            _BitmapImage = ReInitalize(new Bitmap(fileName));
-        }
-
-        /// <summary>
-        /// Crypto Image from File Info
-        /// </summary>
-        /// <param name="fileInfo"></param>
-        public CryptoImage(FileInfo fileInfo)
-        {
-            _FileName = fileInfo.FullName;
-            _BitmapImage = ReInitalize(new Bitmap(_FileName));
-        }
-
-        /// <summary>
         /// Internal Pixels
         /// </summary>
         private List<Pixel> _Pixels { get; set; }
-
-        /// <summary>
-        /// Image Pixels
-        /// </summary>
-        public List<Pixel> Pixels
-        {
-            get
-            {
-                if (_Pixels == null)
-                    return getPixels();
-                else
-                    return _Pixels;
-            }
-        }
-
-        /// <summary>
-        /// Content Length
-        /// </summary>
-        public int Length { get { return _Length; } }
-
-        /// <summary>
-        /// Internal Content Length
-        /// </summary>
-        public int _Length { get; set; }
 
         /// <summary>
         /// Get Pixels
@@ -123,73 +58,145 @@ namespace CryptoSteganography
                     _Pixels.Add(pixel);
                 }
             }
-
-            _Length = _Pixels[0].Byte;
             return _Pixels;
         }
 
         /// <summary>
-        /// Merge String
+        /// 32 Bit ARGB
         /// </summary>
-        /// <param name="value"></param>
-        public void Merge(string value)
+        /// <param name="bitmap"></param>
+        /// <returns></returns>
+        private Bitmap ReInitalize(Bitmap bitmap)
         {
-            getPixels();
+            // Bitmap Image 32 Bit Re Initalize Procces
+            //
 
-            int length = value.Length;
+            return bitmap;
+        }
+        
+        /// <summary>
+        /// Internal Content Length
+        /// </summary>
+        public int _Length { get; set; }
 
-            setLength(length);
+        /// <summary>
+        /// Initalize Constractor
+        /// </summary>
+        private void init()
+        {
+            _Pixels = getPixels();
 
-            for (int i = _StartPosition; i < length + _StartPosition; i++)
-            {
-                int position = i - _StartPosition;
-                var item = value[position];
-                _Pixels[i].Merge(item);
-                _BitmapImage.SetPixel(_Pixels[i].X, _Pixels[i].Y, _Pixels[i].COLOR);
-            }
+            // String Length
+            _Length = getStringLength();
         }
 
         /// <summary>
-        /// Get Merged String
+        /// if there is string return string length
         /// </summary>
         /// <returns></returns>
-        public string GetMergedString()
-        {
-            string result = "";
-            for (int i = _StartPosition; i < Length + _StartPosition; i++)
-            {
-                int postion = _StartPosition + i;
-                result += Pixels[postion].Char;
-            }
-            return result;
+        private int getStringLength() {
+
+            return _Pixels[0].Int;
         }
 
         /// <summary>
-        /// Get Separate String
-        /// </summary>
-        /// <returns></returns>
-        public string GetSeparateString()
-        {
-            string result = "";
-            for (int i = _StartPosition; i < Length + _StartPosition; i++)
-            {
-                int postion = _StartPosition + i;
-                result += Pixels[postion].Char;
-            }
-            return result;
-        }
-
-        /// <summary>
-        /// Set Lenth Header
+        /// String Length set pixel color bitmap
         /// </summary>
         /// <param name="length"></param>
-        private void setLength(int length)
+        private void setStringLength(int length)
         {
             _Length = length;
             _Pixels[0].Merge(length);
             _BitmapImage.SetPixel(_Pixels[0].X, _Pixels[0].Y, _Pixels[0].COLOR);
         }
 
+        /// <summary>
+        /// Crypto Image From Bitmap Image
+        /// </summary>
+        public CryptoImage(Bitmap bitmapImage)
+        {
+            _BitmapImage = ReInitalize(bitmapImage);
+            init();
+        }
+
+        /// <summary>
+        /// Crypto Image From File
+        /// </summary>
+        /// <param name="fileName"></param>
+        public CryptoImage(string fileName)
+        {
+            _FileName = fileName;
+            _BitmapImage = ReInitalize(new Bitmap(fileName));
+            init();
+        }
+
+        /// <summary>
+        /// Crypto Image from File Info
+        /// </summary>
+        /// <param name="fileInfo"></param>
+        public CryptoImage(FileInfo fileInfo)
+        {
+            _FileName = fileInfo.FullName;
+            _BitmapImage = ReInitalize(new Bitmap(_FileName));
+            init();
+        }
+
+        /// <summary>
+        /// Image Pixels
+        /// </summary>
+        public List<Pixel> Pixels
+        {
+            get
+            {
+                return _Pixels;
+            }
+        }
+
+        /// <summary>
+        /// Content Length
+        /// </summary>
+        public int Length { get { return _Length; } }
+        
+        /// <summary>
+        /// Merge String
+        /// </summary>
+        /// <param name="value"></param>
+        public void Merge(string value)
+        {
+            int stringLength = value.Length;
+            int endPosition = _StartPosition + stringLength;
+            
+            for (int i = _StartPosition; i < endPosition; i++)
+            {
+                int charPosition = i - _StartPosition;
+                var item = value[charPosition];
+                _Pixels[i].Merge(item);
+                _BitmapImage.SetPixel(_Pixels[i].X, _Pixels[i].Y, _Pixels[i].COLOR);
+            }
+            setStringLength(stringLength);
+        }
+
+        /// <summary>
+        /// Get Merged String
+        /// Separate From Color
+        /// </summary>
+        /// <returns></returns>
+        public string String
+        {
+            get
+            {
+                string result = "";
+                int endPosition = _StartPosition + Length;
+                for (int i = _StartPosition; i < endPosition; i++)
+                {
+                    char item = _Pixels[i].Char;
+                    result += item;
+                }
+
+                return result;
+            }
+        }
+        
         /// <summary>
         /// Save Merged Image
         /// </summary>

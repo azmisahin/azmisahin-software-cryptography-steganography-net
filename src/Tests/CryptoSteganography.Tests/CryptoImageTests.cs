@@ -4,6 +4,7 @@ using System.IO;
 using System.Drawing;
 using System.Collections.Generic;
 using CryptoSteganography.Extensions.String.Tests.Mock;
+using CryptoSteganography.Extensions.Picture.Tests.Mock;
 
 namespace CryptoSteganography.Tests
 {
@@ -75,29 +76,34 @@ namespace CryptoSteganography.Tests
             // Test Modul
             instance.Merge(StringMock.StringItem);
             string expected = StringMock.StringItem;
-            string actual = instance.GetMergedString();
+            string actual = instance.String;
 
             // Test Condination
-            Assert.AreEqual(expected, actual);            
-
-            // Test Modul
-            instance.Save("sample/merged/square.text.bmp");
+            Assert.AreEqual(expected, actual);
         }
-        public readonly static int SampleInt = 19;
-        public readonly static Color SampleIntMerger = Color.FromArgb(252, 253, 252, 255);
+
         [TestMethod()]
         public void SeparateTest()
         {
             // Instance
             var instance = new CryptoImage(new FileInfo("sample/merged/square.text.bmp"));
+            var pixel = instance.BitmapImage.GetPixel(0, 0);
+
+            // Instance
+            var separator = new Core.Picture.Separator(pixel);
 
             // Test Modul
-            string expected = StringMock.StringItem;
-            string actual = instance.GetSeparateString();
-            string actual2 = instance.GetMergedString();
+            int expected = PictureMock.SampleInt;
+            int actual = separator.SeparateByte();
 
             // Test Condination
             Assert.AreEqual(expected, actual);
+
+            // Test Condination
+            Assert.IsTrue(instance.String.Length == PictureMock.SampleInt);
+
+            // Test Condination
+            Assert.AreEqual(StringMock.StringItem, instance.String);
         }
     }
 }
