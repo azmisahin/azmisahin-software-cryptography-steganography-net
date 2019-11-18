@@ -18,39 +18,13 @@ namespace CryptoSteganography.Tests
         }
 
         [TestMethod()]
-        public void SteganographyMergerTest()
-        {
-            var instance = Steganography
-                .Merger
-                .SourceType(SteganographyType.Image)
-                .Source(new FileInfo("sample/square.bmp"))
-                .MergeType(SteganographyType.Text)
-                .Content("CryptoSteganography")
-                .Merge(new FileInfo("sample/merged/square.text.bmp"));
-
-            // Test Condination
-            Assert.IsInstanceOfType(instance, typeof(CryptoImage));
-        }
-
-
-        [TestMethod()]
         public void SteganographySeparatorTest()
         {
-            var instance = Steganography
-                .Separator
-                .SourceType(SteganographyType.Image)
-                .Source(new FileInfo("sample/merged/square.text.bmp"))
-                .SeparateType(SteganographyType.Text)
-                .Separate();
+            // Instance
+            var instance = Steganography.Separator;
 
             // Test Condination
-            Assert.IsInstanceOfType(instance, typeof(CryptoImage));
-
-            // Test Modul
-            CryptoImage actual = (CryptoImage)instance;
-
-            // Test Condination
-            Assert.IsInstanceOfType(actual.String, typeof(string));
+            Assert.IsInstanceOfType(instance, typeof(ISeparator));
         }
     }
 }

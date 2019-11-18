@@ -54,8 +54,10 @@
   </Choose>
   <ItemGroup>
     <Compile Include="CryptoImageTests.cs" />
+    <Compile Include="MergerTests.cs" />
     <Compile Include="PixelTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SeparatorTests.cs" />
     <Compile Include="SteganographyTests.cs" />
   </ItemGroup>
   <ItemGroup>
