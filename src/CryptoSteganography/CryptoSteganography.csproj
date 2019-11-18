@@ -47,6 +47,14 @@
       <Project>{C6473FAE-EED9-4AAB-8ECE-762C121757CD}</Project>
       <Name>CryptoSteganography.Extensions.Byte</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Extensions\CryptoSteganography.Extensions.Char\CryptoSteganography.Extensions.Char.csproj">
+      <Project>{5D4889AE-2599-4737-92AA-CFE08D3C7838}</Project>
+      <Name>CryptoSteganography.Extensions.Char</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Extensions\CryptoSteganography.Extensions.Int\CryptoSteganography.Extensions.Int.csproj">
+      <Project>{66E6C491-F8FB-4DFB-884B-9189DD4C7F96}</Project>
+      <Name>CryptoSteganography.Extensions.Int</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Extensions\CryptoSteganography.Extensions.Picture\CryptoSteganography.Extensions.Picture.csproj">
       <Project>{e9d5b399-6d84-4bb3-a8c4-32603fa72193}</Project>
       <Name>CryptoSteganography.Extensions.Picture</Name>

@@ -33,7 +33,7 @@ namespace CryptoSteganography.Tests
             Assert.AreEqual(expected, actual);
 
             // Test Condination
-            Assert.AreEqual(CharMock.CharItem, instance.MergedCharItem);
+            Assert.AreEqual(CharMock.CharItem, instance.Char);
         }
     }
 }

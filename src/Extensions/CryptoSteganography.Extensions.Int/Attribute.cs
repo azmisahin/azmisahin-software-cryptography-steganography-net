@@ -27,6 +27,16 @@ namespace CryptoSteganography.Extensions.Int
         }
 
         /// <summary>
+        /// Convert To Byte
+        /// </summary>
+        /// <param name="intItem"></param>
+        /// <returns></returns>
+        public static byte ToByte(this int intItem)
+        {
+            return Convert.ToByte(intItem);
+        }
+
+        /// <summary>
         /// Converts an int array to a byte array type.
         /// </summary>
         /// <param name="intMatrix"></param>

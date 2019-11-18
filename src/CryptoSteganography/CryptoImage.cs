@@ -14,7 +14,7 @@ namespace CryptoSteganography
         /// Start Position
         /// </summary>
         private readonly ushort _StartPosition = 10;
-         
+
         /// <summary>
         /// Internal Image
         /// </summary>
@@ -124,7 +124,7 @@ namespace CryptoSteganography
                 }
             }
 
-            _Length = _Pixels[0].SeparateByteItem;
+            _Length = _Pixels[0].Byte;
             return _Pixels;
         }
 
@@ -145,7 +145,7 @@ namespace CryptoSteganography
                 int position = i - _StartPosition;
                 var item = value[position];
                 _Pixels[i].Merge(item);
-                _BitmapImage.SetPixel(_Pixels[i].X, _Pixels[i].Y, _Pixels[i].MERGED_COLOR);
+                _BitmapImage.SetPixel(_Pixels[i].X, _Pixels[i].Y, _Pixels[i].COLOR);
             }
         }
 
@@ -158,7 +158,8 @@ namespace CryptoSteganography
             string result = "";
             for (int i = _StartPosition; i < Length + _StartPosition; i++)
             {
-                result += Pixels[i].MergedCharItem;
+                int postion = _StartPosition + i;
+                result += Pixels[postion].Char;
             }
             return result;
         }
@@ -172,7 +173,8 @@ namespace CryptoSteganography
             string result = "";
             for (int i = _StartPosition; i < Length + _StartPosition; i++)
             {
-                result += Pixels[i].SeparateByteItem;
+                int postion = _StartPosition + i;
+                result += Pixels[postion].Char;
             }
             return result;
         }
@@ -185,7 +187,7 @@ namespace CryptoSteganography
         {
             _Length = length;
             _Pixels[0].Merge(length);
-            _BitmapImage.SetPixel(_Pixels[0].X, _Pixels[0].Y, _Pixels[0].MERGED_COLOR);
+            _BitmapImage.SetPixel(_Pixels[0].X, _Pixels[0].Y, _Pixels[0].COLOR);
         }
 
         /// <summary>

@@ -3,6 +3,8 @@ using System.Drawing;
 using CryptoSteganography.Extensions.Picture;
 using CryptoSteganography.Core.Picture;
 using CryptoSteganography.Extensions.Byte;
+using CryptoSteganography.Extensions.Char;
+using CryptoSteganography.Extensions.Int;
 
 namespace CryptoSteganography
 {
@@ -47,7 +49,7 @@ namespace CryptoSteganography
         /// <summary>
         /// Byte Item
         /// </summary>
-        internal byte SeparateByteItem 
+        public byte Byte
         {
             get
             {
@@ -62,48 +64,46 @@ namespace CryptoSteganography
         /// <summary>
         /// Char Item
         /// </summary>
-        public char CharItem
+        public char Char
         {
             get
             {
-                return SeparateByteItem.ToChar();
+                return Byte.ToChar();
             }
         }
 
         /// <summary>
-        /// Merged Color
+        /// Int Item
         /// </summary>
-        public Color MERGED_COLOR { get { return _MERGED_COLOR; } }
-
-        /// <summary>
-        /// Internal Merged Color
-        /// </summary>
-        private Color _MERGED_COLOR { get; set; }
-
-        /// <summary>
-        /// Merged Byte Item
-        /// </summary>
-        internal byte MergedByteItem
+        public int Int
         {
             get
             {
-                var instance = new Separator(MERGED_COLOR);
-
-                byte actual = instance.SeparateByte();
-
-                return actual;
+                return Byte.ToInt();
             }
         }
 
         /// <summary>
-        /// Merged Char Item
+        /// Merge Byte Item
         /// </summary>
-        public char MergedCharItem
+        /// <param name="item"></param>
+        /// <returns></returns>
+        private Color mergeByte(byte item)
         {
-            get
-            {
-                return MergedByteItem.ToChar();
-            }
+            var merger = new Core.Picture.Merger(COLOR);
+
+            COLOR = merger.Merge(item);
+
+            return COLOR;
+        }
+
+        /// <summary>
+        /// Merge Pixel
+        /// </summary>
+        /// <param name="item"></param>
+        public Color Merge(byte item)
+        {
+            return mergeByte(item);
         }
 
         /// <summary>
@@ -112,11 +112,7 @@ namespace CryptoSteganography
         /// <param name="item"></param>
         public Color Merge(char item)
         {
-            var merger = new Core.Picture.Merger(COLOR);
-
-            _MERGED_COLOR = merger.Merge(item);
-
-            return MERGED_COLOR;
+            return mergeByte(item.ToByte());
         }
 
         /// <summary>
@@ -126,9 +122,7 @@ namespace CryptoSteganography
         /// <returns></returns>
         public Color Merge(int item)
         {
-            var merger = new Core.Picture.Merger(COLOR);
-            _MERGED_COLOR = merger.Merge(item);
-            return MERGED_COLOR;
+            return mergeByte(item.ToByte());
         }
     }
 }

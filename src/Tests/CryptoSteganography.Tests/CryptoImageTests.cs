@@ -83,7 +83,8 @@ namespace CryptoSteganography.Tests
             // Test Modul
             instance.Save("sample/merged/square.text.bmp");
         }
-
+        public readonly static int SampleInt = 19;
+        public readonly static Color SampleIntMerger = Color.FromArgb(252, 253, 252, 255);
         [TestMethod()]
         public void SeparateTest()
         {
@@ -93,6 +94,7 @@ namespace CryptoSteganography.Tests
             // Test Modul
             string expected = StringMock.StringItem;
             string actual = instance.GetSeparateString();
+            string actual2 = instance.GetMergedString();
 
             // Test Condination
             Assert.AreEqual(expected, actual);
