@@ -26,7 +26,7 @@ namespace CryptoSteganography.Tests
                 .Source(new FileInfo("sample/square.bmp"))
                 .MergeType(SteganographyType.Text)
                 .Content("CryptoSteganography")
-                .Merge(new FileInfo("sample/merged/square.txt.bmp"));
+                .Merge(new FileInfo("sample/merged/square.text.bmp"));
 
             // Test Condination
             Assert.IsInstanceOfType(instance, typeof(CryptoImage));
@@ -39,7 +39,7 @@ namespace CryptoSteganography.Tests
             var instance = Steganography
                 .Separator
                 .SourceType(SteganographyType.Image)
-                .Source(new FileInfo("sample/merged/square.txt.bmp"))
+                .Source(new FileInfo("sample/merged/square.text.bmp"))
                 .SeparateType(SteganographyType.Text)
                 .Separate();
 
