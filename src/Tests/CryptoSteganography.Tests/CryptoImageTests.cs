@@ -5,6 +5,7 @@ using System.Drawing;
 using System.Collections.Generic;
 using CryptoSteganography.Extensions.String.Tests.Mock;
 using CryptoSteganography.Extensions.Picture.Tests.Mock;
+using System;
 
 namespace CryptoSteganography.Tests
 {
@@ -105,7 +106,7 @@ namespace CryptoSteganography.Tests
             // Test Condination
             Assert.AreEqual(StringMock.StringItem, instance.String);
         }
-        
+
         [TestMethod()]
         public void SaveTest()
         {
@@ -119,10 +120,10 @@ namespace CryptoSteganography.Tests
 
             // Test Condination
             Assert.AreEqual(expected, actual);
-            
+
             // Thread SAFE
             System.Threading.Thread.Sleep(20);
-            instance.Save(new FileInfo("sample/merged/square.text.bmp"));
+            instance.Save(new FileInfo("sample/merged/square.text." + DateTime.Now.Ticks + ".bmp"));
         }
     }
 }

@@ -203,7 +203,16 @@ namespace CryptoSteganography
         /// <param name="file"></param>
         public void Save(FileInfo file)
         {
-            BitmapImage.Save(file.FullName);
+            try
+            {
+                BitmapImage.Save(file.FullName);
+            }
+            catch (System.Exception ex)
+            {
+                // Save Error
+                System.Console.WriteLine(ex);
+            }
+
         }
     }
 }
