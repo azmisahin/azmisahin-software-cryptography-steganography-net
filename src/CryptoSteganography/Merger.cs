@@ -128,7 +128,7 @@ namespace CryptoSteganography
         /// Merge Text
         /// </summary>
         /// <returns></returns>
-        private object mergeText()
+        private CryptoText mergeText()
         {
             CryptoText result = new CryptoText(_sourceFile);
 

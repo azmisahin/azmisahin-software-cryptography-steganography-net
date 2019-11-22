@@ -23,7 +23,7 @@ namespace CryptoSteganography
         /// 
         /// </summary>
         /// <param name="_mergeContent"></param>
-        internal void Merge(string _mergeContent)
+        public void Merge(string _mergeContent)
         {
             throw new NotImplementedException();
         }
@@ -32,9 +32,24 @@ namespace CryptoSteganography
         /// 
         /// </summary>
         /// <param name="_targetFile"></param>
-        internal void Save(FileInfo _targetFile)
+        public void Save(FileInfo _targetFile)
         {
             throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// Get Merged String
+        /// Separate From String
+        /// </summary>
+        /// <returns></returns>
+        public string String
+        {
+            get
+            {
+                string result = "";
+
+                return result;
+            }
         }
     }
 }
