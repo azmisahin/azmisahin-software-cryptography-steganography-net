@@ -32,41 +32,111 @@ namespace CryptoSteganography
         {
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="type"></param>
+        /// <returns></returns>
         public IMerger SourceType(SteganographyType type)
         {
             _sourceType = type;
             return this;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="file"></param>
+        /// <returns></returns>
         public IMerger Source(FileInfo file)
         {
             _sourceFile = file;
             return this;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="type"></param>
+        /// <returns></returns>
         public IMerger MergeType(SteganographyType type)
         {
             _mergeType = type;
             return this;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="content"></param>
+        /// <returns></returns>
         public IMerger Content(string content)
         {
             _mergeContent = content;
             return this;
         }
 
+        /// <summary>
+        /// Merge Swicher
+        /// </summary>
+        /// <param name="file"></param>
+        /// <returns></returns>
         public object Merge(FileInfo file)
         {
             _targetFile = file;
 
-            CryptoImage cryptoImage = new CryptoImage(_sourceFile);
-            
-            cryptoImage.Merge(_mergeContent);
+            object result = null;
 
-            cryptoImage.Save(_targetFile);
+            switch (_sourceType)
+            {
+                case SteganographyType.Text:
+                    result = mergeText();
+                    break;
+                case SteganographyType.Image:
+                    result = mergeImage();
+                    break;
+                case SteganographyType.Binary:
+                    break;
+                case SteganographyType.Audio:
+                    break;
+                case SteganographyType.Video:
+                    break;
+                default:
+                    break;
+            }
 
-            return cryptoImage;
+            return result;
+        }
+
+        /// <summary>
+        /// Merge Image
+        /// </summary>
+        /// <returns></returns>
+        private CryptoImage mergeImage()
+        {
+
+            CryptoImage result = new CryptoImage(_sourceFile);
+
+            result.Merge(_mergeContent);
+
+            result.Save(_targetFile);
+
+            return result;
+        }
+
+        /// <summary>
+        /// Merge Text
+        /// </summary>
+        /// <returns></returns>
+        private object mergeText()
+        {
+            CryptoText result = new CryptoText(_sourceFile);
+
+            result.Merge(_mergeContent);
+
+            result.Save(_targetFile);
+
+            return result;
         }
     }
 }
