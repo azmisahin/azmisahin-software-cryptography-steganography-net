@@ -106,7 +106,15 @@ namespace CryptoSteganography
         /// <param name="_targetFile"></param>
         public void Save(FileInfo _targetFile)
         {
-            throw new NotImplementedException();
+            try
+            {
+                File.WriteAllText(_targetFile.FullName, Sentence);
+            }
+            catch (System.Exception ex)
+            {
+                // Save Error
+                System.Console.WriteLine(ex);
+            }
         }
 
         /// <summary>

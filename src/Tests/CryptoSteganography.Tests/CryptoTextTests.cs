@@ -48,9 +48,26 @@ namespace CryptoSteganography.Tests
             // Test Condination
             Assert.AreEqual(expected, actual);
 
-            // Thread SAFE
-            System.Threading.Thread.Sleep(20);
-            instance.Save(new FileInfo("sample/merged/dictionary.text." + DateTime.Now.Ticks + ".txt"));
+            // Save
+            instance.Save(new FileInfo("sample/merged/dictionary.text" + ".en" + ".txt"));
+        }
+
+        [TestMethod()]
+        public void SaveTest2()
+        {
+            // Instance
+            var instance = new CryptoText(new FileInfo("sample/dictionary.tr.json"));
+
+            // Test Modul
+            instance.Merge(StringMock.StringItem);
+            string expected = StringMock.StringItem;
+            string actual = instance.String;
+
+            // Test Condination
+            Assert.AreEqual(expected, actual);
+
+            // Save
+            instance.Save(new FileInfo("sample/merged/dictionary.text" + ".tr" + ".txt"));
         }
     }
 }
