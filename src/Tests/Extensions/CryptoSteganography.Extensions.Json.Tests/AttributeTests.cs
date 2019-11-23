@@ -9,7 +9,14 @@ namespace CryptoSteganography.Extensions.Json.Tests
         [TestMethod()]
         public void ToStringArrayTest()
         {
-            Assert.Fail();
+            string JsonString = "['anarchic','anopheles','anti-federalist','aspirated','autocratship']";
+
+            // Test Modul
+            string[] expected = new string[] { "anarchic", "anopheles", "anti-federalist", "aspirated", "autocratship" };
+            string[] actual = JsonString.ToStringArray();
+
+            // Test Condination
+            CollectionAssert.AreEqual(expected, actual);
         }
     }
 }
