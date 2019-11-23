@@ -73,7 +73,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptoSteganography", "Cryp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptoSteganography.Tests", "Tests\CryptoSteganography.Tests\CryptoSteganography.Tests.csproj", "{5D123867-E2E7-467F-974D-9372DD94D2B4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptoSteganography.Extensions.Json", "CryptoSteganography.Extensions.Json\CryptoSteganography.Extensions.Json.csproj", "{7BB591FD-BA10-47AE-8378-271506F723B8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptoSteganography.Extensions.Json", "Extensions\CryptoSteganography.Extensions.Json\CryptoSteganography.Extensions.Json.csproj", "{7BB591FD-BA10-47AE-8378-271506F723B8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
