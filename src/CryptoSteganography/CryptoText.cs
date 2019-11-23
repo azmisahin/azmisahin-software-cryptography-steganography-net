@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CryptoSteganography.Extensions.Json;
+using System;
 using System.IO;
 
 namespace CryptoSteganography
@@ -13,10 +14,22 @@ namespace CryptoSteganography
         /// <summary>
         /// 
         /// </summary>
+        private string[] words { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         /// <param name="_sourceFile"></param>
         public CryptoText(FileInfo _sourceFile)
         {
             this._sourceFile = _sourceFile;
+
+            if (_sourceFile.Extension == ".json")
+            {
+                StreamReader streamReader = new StreamReader(_sourceFile.FullName);
+                var stringJson = streamReader.ReadToEnd();
+                words = stringJson.ToStringArray();
+            }            
         }
 
         /// <summary>

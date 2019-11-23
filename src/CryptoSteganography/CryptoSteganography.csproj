@@ -60,6 +60,10 @@
       <Project>{66E6C491-F8FB-4DFB-884B-9189DD4C7F96}</Project>
       <Name>CryptoSteganography.Extensions.Int</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Extensions\CryptoSteganography.Extensions.Json\CryptoSteganography.Extensions.Json.csproj">
+      <Project>{7BB591FD-BA10-47AE-8378-271506F723B8}</Project>
+      <Name>CryptoSteganography.Extensions.Json</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Extensions\CryptoSteganography.Extensions.Picture\CryptoSteganography.Extensions.Picture.csproj">
       <Project>{e9d5b399-6d84-4bb3-a8c4-32603fa72193}</Project>
       <Name>CryptoSteganography.Extensions.Picture</Name>
