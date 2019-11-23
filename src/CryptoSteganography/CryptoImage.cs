@@ -216,7 +216,6 @@ namespace CryptoSteganography
                 // Save Error
                 System.Console.WriteLine(ex);
             }
-
         }
     }
 }

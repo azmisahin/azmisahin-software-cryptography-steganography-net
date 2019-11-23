@@ -9,6 +9,9 @@ namespace CryptoSteganography
     /// </summary>
     public class CryptoText
     {
+        /// <summary>
+        /// 
+        /// </summary>
         private FileInfo _sourceFile;
 
         /// <summary>
@@ -48,16 +51,16 @@ namespace CryptoSteganography
                     {
                         if (!IsLower)
                         {
-                            word = str.ToUpper() + " ";
+                            word = str.ToUpper();
                         }
                         else
                         {
-                            word = str + " ";
+                            word = str;
                         }
-                        return word;
+                        return word + " ";
                     }
                 }
-                finally { }
+                catch { }
             }
             return word;
         }
@@ -66,7 +69,7 @@ namespace CryptoSteganography
         /// 
         /// </summary>
         public string Sentence { get { return _sentence; } }
-        
+
         /// <summary>
         /// 
         /// </summary>
@@ -116,7 +119,15 @@ namespace CryptoSteganography
             get
             {
                 string result = "";
-
+                string[] collection = _sentence.Split(' ');
+                foreach (string word in collection)
+                {
+                    try
+                    {
+                        result += word.Substring(_position - 1, 1);
+                    }
+                    catch { }
+                }
                 return result;
             }
         }
