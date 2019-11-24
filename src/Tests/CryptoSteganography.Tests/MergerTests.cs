@@ -141,11 +141,51 @@ namespace CryptoSteganography.Tests
                 .SourceType(SteganographyType.Text)
                 .Source(new System.IO.FileInfo("sample/dictionary.en.json"))
                 .MergeType(SteganographyType.Text)
-                .Content(StringMock.StringItem)
-                .Merge(new System.IO.FileInfo("sample/merged/dictionary.en.txt"));
+                .Content(@"
+Peter Piper picked a peck of pickled peppers;
+A peck of pickled peppers Peter Piper picked;
+If Peter Piper picked a peck of pickled peppers,
+Where’s the peck of pickled peppers Peter Piper picked?")
+                .Merge(new System.IO.FileInfo("sample /merged/dictionary.en.txt"));
 
             // Test Condination
             Assert.IsInstanceOfType(actual, typeof(CryptoText));
+
+            CryptoText ct = (CryptoText)actual;
+
+            System.Console.WriteLine(ct.String);
+        }
+
+        [TestMethod()]
+        public void MergeTextTest2()
+        {
+            // Instance
+            var instance = new Merger();
+
+            // Test Condination
+            Assert.IsInstanceOfType(instance, typeof(IMerger));
+
+            // Test Modul
+            var actual = instance
+                .SourceType(SteganographyType.Text)
+                .Source(new System.IO.FileInfo("sample/dictionary.tr.json"))
+                .MergeType(SteganographyType.Text)
+                .Content(@"
+Şu tarlaya bi şinik kekere mekere ekmişler.
+Bu tarlaya da bi şinik kekere mekere ekmişler.
+Şu tarlaya ekilen bir şinik kekere mekereye dadanan boz ala boz başlıklı pis porsuk,
+bu tarlaya ekilen bir şinik kekere mekereye dadanan boz ala boz başlıklı pis porsuğa demiş ki;
+'ben bu tarlaya ekilen bir şinik kekere mekereye dadanan boz ala boz başlıklı pis porsuğum' demiş.
+Öteki tarlaya ekilen bir şinik kekere mekereye dadanan boz ala boz başlıklı pis porsukta;
+ben de; 'bu tarlaya ekilen bir şinik kekere mekereye dadanan boz ala boz başlıklı pis porsuğum' demiş.")
+                .Merge(new System.IO.FileInfo("sample/merged/dictionary.tr.txt"));
+
+            // Test Condination
+            Assert.IsInstanceOfType(actual, typeof(CryptoText));
+
+            CryptoText ct = (CryptoText)actual;
+
+            System.Console.WriteLine(ct.String);
         }
     }
 }

@@ -30,6 +30,11 @@ namespace CryptoSteganography
         private string _sentence { get; set; }
 
         /// <summary>
+        /// Space
+        /// </summary>
+        private string _space = "sp";
+
+        /// <summary>
         /// 
         /// </summary>
         /// <param name="item"></param>
@@ -41,6 +46,11 @@ namespace CryptoSteganography
             {
                 try
                 {
+                    int valid = str.Substring(0, 1)[0];
+
+                    if (valid <= 97 || valid >= 122)
+                        continue;
+
                     char chr = str.Substring(_position - 1, 1)[0];
 
                     bool IsLower = char.IsLower(item);
@@ -57,6 +67,19 @@ namespace CryptoSteganography
                         {
                             word = str;
                         }
+
+                        if (item <= 97 || item >= 122)
+                        {
+                            if (item == 32)
+                            {
+                                word = _space;
+                            }
+                            else
+                            {
+                                word = item.ToString();
+                            }
+                        }
+
                         return word + " ";
                     }
                 }
@@ -140,7 +163,21 @@ namespace CryptoSteganography
                 {
                     try
                     {
-                        result += word.Substring(_position - 1, 1);
+                        if (word == _space)
+                        {
+                            result += " ";
+                        }
+                        else
+                        {
+                            if (word.Length == 1)
+                            {
+                                result += word;
+                            }
+                            else
+                            {
+                                result += word.Substring(_position - 1, 1);
+                            }
+                        }
                     }
                     catch { }
                 }
