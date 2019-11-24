@@ -92,6 +92,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="sample\merged\steganongraphy.en.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="sample\merged\square.text.bmp">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

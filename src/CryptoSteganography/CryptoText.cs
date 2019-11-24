@@ -78,11 +78,19 @@ namespace CryptoSteganography
         {
             this._sourceFile = _sourceFile;
 
+            StreamReader streamReader = new StreamReader(_sourceFile.FullName);
+            var stringValue = streamReader.ReadToEnd();
+
+            // Merge Time
             if (_sourceFile.Extension == ".json")
             {
-                StreamReader streamReader = new StreamReader(_sourceFile.FullName);
-                var stringJson = streamReader.ReadToEnd();
-                words = stringJson.ToStringArray();
+                words = stringValue.ToStringArray();
+            }
+
+            // Separate Time
+            if (_sourceFile.Extension == ".txt")
+            {
+                _sentence = stringValue;
             }
         }
 

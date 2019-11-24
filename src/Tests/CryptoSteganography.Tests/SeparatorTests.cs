@@ -88,5 +88,24 @@ namespace CryptoSteganography.Tests
             // Test Condination
             Assert.IsInstanceOfType(actual.String, typeof(string));
         }
+
+        [TestMethod()]
+        public void SeparateTextTest()
+        {
+            var instance = new Separator()
+                .SourceType(SteganographyType.Text)
+                .Source(new FileInfo("sample/merged/steganongraphy.en.txt"))
+                .SeparateType(SteganographyType.Text)
+                .Separate();
+
+            // Test Condination
+            Assert.IsInstanceOfType(instance, typeof(CryptoText));
+
+            // Test Modul
+            CryptoText actual = (CryptoText)instance;
+
+            // Test Condination
+            Assert.IsInstanceOfType(actual.String, typeof(string));
+        }
     }
 }
