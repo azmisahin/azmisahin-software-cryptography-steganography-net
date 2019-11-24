@@ -1,4 +1,4 @@
-﻿using CryptoSteganography.Extensions.Json;
+using CryptoSteganography.Extensions.Json;
 using System;
 using System.IO;
 
@@ -107,7 +107,7 @@ namespace CryptoSteganography
             // Merge Time
             if (_sourceFile.Extension == ".json")
             {
-                words = stringValue.ToStringArray();
+                words = stringValue.ToStringArray().Shuffle();
             }
 
             // Separate Time
